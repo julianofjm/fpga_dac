@@ -58,9 +58,6 @@ architecture rtl of dac_dds is
     
     signal reg_dds_data			: std_logic_vector( wb_size-1 downto 0);
     signal reg_frequency		: std_logic_vector( wb_size-1 downto 0);
-    --~ signal reg_frequency		: std_logic_vector( wb_size-1 downto 0) := x"00000b29";		-- default value referring 35 kHz
-    --~ signal reg_frequency		: std_logic_vector( wb_size-1 downto 0) := x"000009c4";		-- default value referring 40 kHz
-    --~ signal reg_frequency		: std_logic_vector( wb_size-1 downto 0) := x"000007d0";		-- default value referring 50 kHz
 
     signal read_ack 			: std_logic ;
     signal write_ack 			: std_logic ;
@@ -225,12 +222,12 @@ begin
 			if gls_reset_n = '0' then 
 				--~ reg_dds_data	<= (others => '0');
 				--~ reg_frequency	<= (others => '0');
+
 				--~ reg_dds_data	<= x"000001ad";		-- default value referring 10Hz
 				reg_dds_data	<= x"000010c6";		-- default value referring 100Hz
 				--~ reg_dds_data	<= x"0000a7c5";		-- default value referring 1 000Hz
 				
 				--~ reg_frequency	<= x"00002710";		-- default value referring 10 kHz
-				--~ reg_frequency	<= x"";		-- default value referring 25 kHz
 				--~ reg_frequency	<= x"00000d05";		-- default value referring 30 kHz
 				--~ reg_frequency	<= x"00000b29";		-- default value referring 35 kHz
 				--~ reg_frequency	<= x"00000ad9";		-- default value referring 36 kHz
@@ -240,9 +237,7 @@ begin
 				--~ reg_frequency	<= x"000009c4";		-- default value referring 40 kHz
 				--~ reg_frequency	<= x"000007d0";		-- default value referring 50 kHz
 				--~ reg_frequency	<= x"000003e8";		-- default value referring 100 kHz
-				--~ reg_frequency	<= x"";		-- default value referring 500 kHz
 				--~ reg_frequency	<= x"00000064";		-- default value referring 1000 kHz
-				--~ reg_frequency	<= x"";		-- default value referring 1300 kHz
 
 				write_ack <= '0';
 			else

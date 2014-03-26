@@ -28,8 +28,6 @@ entity fpga_dac is
 	dac_pin_reset_n		: buffer std_logic;
 	dac_pin_sdo			: buffer std_logic;
 	
-	--~ USER_SMA_CLOCK_P	: out std_logic;
-	
 	debug_dac_pin_sync_n		: out std_logic;
 	debug_dac_pin_sclk			: out std_logic;
 	debug_dac_pin_dgnd1			: out std_logic;
@@ -452,32 +450,6 @@ begin  -- rtl
 			end if;
         end if;
     end process blink_led; 
-
-	--~ process(clk_sys)
-	--~ constant c_max : natural := 4;
-    --~ variable count : natural range 0 to c_max;
-    --~ begin
-        --~ if rising_edge(clk_sys) then
-			--~ if(clk_sys_rstn = '0') then
-				--~ count := 0;
-				--~ USER_SMA_CLOCK_P	<= '0';
-			--~ else
-				--~ if count < c_max/2 then
-					--~ USER_SMA_CLOCK_P	<= '1';
-					--~ count := count + 1;
-				--~ elsif count < c_max then
-					--~ USER_SMA_CLOCK_P	<= '0';
-					--~ count := count + 1;
-				--~ else
-					--~ USER_SMA_CLOCK_P	<= '1';
-					--~ count := 0;
-				--~ end if;
-			--~ end if;
-        --~ end if;
-    --~ end process; 
-    
-    --~ USER_SMA_CLOCK_P		<= not dac_pin_sync_n;
-    --~ USER_SMA_CLOCK_P		<= not dac_pin_sync_n;
     
     debug_dac_pin_sync_n	<= dac_pin_sync_n;
     debug_dac_pin_sclk		<= dac_pin_sclk;
