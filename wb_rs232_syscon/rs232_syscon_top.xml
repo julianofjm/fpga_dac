@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wb_driver nazwa="rs232_syscon_top" wersja="1.0">
+	<interface>
+		<line nazwa="rs232_rxd_i" typ="input" />		
+		<line nazwa="rs232_txd_o" typ="output" />  	
+	</interface>
+	<wb_interface>
+		<line nazwa="clk_i" wb_name="wb_clk" />
+		<line nazwa="reset_i" wb_name="reset" />		
+		<line nazwa="rst_o" wb_name="wb_rst" />
+		<line nazwa="cyc_o" wb_name="wb_cyc" />
+		<line nazwa="adr_o" wb_name="wb_adr" />
+		<line nazwa="data_in" wb_name="wb_data_out" />
+		<line nazwa="we_o" wb_name="wb_we" />
+		<line nazwa="stb_o" wb_name="wb_stb" />
+		<line nazwa="data_out" wb_name="wb_data_in" />
+		<line nazwa="ack_i" wb_name="wb_ack" />
+		<line nazwa="err_i" wb_name="wb_err" />
+		<line nazwa="sel_o" wb_name="wb_sel" />
+	</wb_interface>
+</wb_driver>
